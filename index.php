@@ -33,7 +33,7 @@
 
     //fetch all data from the database
     $post = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    var_dump($post);
+ 
         
     //free result set
     mysqli_free_result($result);
@@ -42,5 +42,35 @@
     mysqli_close($con);
    
 
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='https://bootswatch.com/3/cosmo/bootstrap.min.css'>
+        <title>MaxiBlog</title>
+        <style>
+            h1 {
+                color: gray;
+                text-align: center;
+                margin: 40px 0px 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>MaxiBlog</h1>
+            <?php foreach ($post as $posts): ?>
+                <div class='well'>
+                    <h2><?php echo $posts['title']; ?></h2>
+                    <h6>created at <?php echo $posts['date']; ?> by <?php echo $posts['name']; ?></h6>
+                    <p><h4><?php echo $posts['body']; ?></h4></p>
+                    <a href=''>Read More</a>
+                </div>
+            <?php endforeach; ?>
+        </div>    
+            
+    </body>
+</html>
