@@ -67,7 +67,7 @@
                     <h2><?php echo $posts['title']; ?></h2>
                     <h6>created at <?php echo $posts['date']; ?> by <?php echo $posts['name']; ?></h6>
                     <p><h4><?php echo $posts['body']; ?></h4></p>
-                    <a href=''>Read More</a>
+                    <a class ='btn btn-primary' href="page.php?id=<?php echo $posts['id']; ?>">Read More</a>
                 </div>
             <?php endforeach; ?>
         </div>    
