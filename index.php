@@ -33,8 +33,7 @@
 
     //fetch all data from the database
     $post = mysqli_fetch_all($result, MYSQLI_ASSOC);
- 
-        
+       
     //free result set
     mysqli_free_result($result);
 
@@ -57,20 +56,26 @@
                 text-align: center;
                 margin: 40px 0px 40px;
             }
+            
+            
         </style>
     </head>
     <body>
         <div class='container'>
+            
             <h1>MaxiBlog</h1>
-            <?php foreach ($post as $posts): ?>
+                
+            <?php foreach($post as $posts): ?>
                 <div class='well'>
-                    <h2><?php echo $posts['title']; ?></h2>
-                    <h6>created at <?php echo $posts['date']; ?> by <?php echo $posts['name']; ?></h6>
-                    <p><h4><?php echo $posts['body']; ?></h4></p>
-                    <a class ='btn btn-primary' href="page.php?id=<?php echo $posts['id']; ?>">Read More</a>
+                    <h3><?php echo $posts['title']; ?></h3>
+                    <h5>created by <?php echo $posts['name']; ?> at <?php echo $posts['date']; ?></h5>
+                    <h3><?php echo $posts['body']; ?></h3>
+                    <a href='page.php?id=<?php echo $posts['id']; ?>'>Read More</a>
                 </div>
             <?php endforeach; ?>
-        </div>    
-            
+                
+        </div> 
     </body>
 </html>
+
+   
