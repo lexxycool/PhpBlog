@@ -51,20 +51,14 @@
         <link rel='stylesheet' href='https://bootswatch.com/3/cosmo/bootstrap.min.css'>
         <title>MaxiBlog</title>
         <style>
-            h1 {
-                color: gray;
-                text-align: center;
-                margin: 40px 0px 40px;
-            }
-            
-            
+            .well {
+                margin: 5px 0px 30px;
+            } 
         </style>
     </head>
     <body>
+        <?php include './header/navBar.php'; ?>
         <div class='container'>
-            
-            <h1>MaxiBlog</h1>
-                
             <?php foreach($post as $posts): ?>
                 <div class='well'>
                     <h3><?php echo $posts['title']; ?></h3>
@@ -72,8 +66,7 @@
                     <h3><?php echo $posts['body']; ?></h3>
                     <a href='page.php?id=<?php echo $posts['id']; ?>'>Read More</a>
                 </div>
-            <?php endforeach; ?>
-                
+            <?php endforeach; ?>   
         </div> 
     </body>
 </html>
